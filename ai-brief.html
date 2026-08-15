@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Brief | Anka Build Studio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="ai">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Anka Build Studio home">
+        <span class="brand-mark">A</span>
+        <span><strong>Anka Build Studio</strong><small data-i18n="brandLine">Mimarlık ve inşaat danışmanlığı</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html" data-i18n="navHome">Ana sayfa</a>
+        <a href="services.html" data-i18n="navServices">Hizmetler</a>
+        <a href="portfolio.html" data-i18n="navPortfolio">Projeler</a>
+        <a href="sigorta.html" data-i18n="navInsurance">Sigorta</a>
+        <a href="ai-brief.html" data-i18n="navAi">AI Brief</a>
+        <a href="contact.html" data-i18n="navContact">İletişim</a>
+      </nav>
+      <div class="language-switch" role="group" aria-label="Language"><button type="button" data-lang="tr" class="active">TR</button><button type="button" data-lang="en">EN</button></div>
+    </header>
+
+    <main>
+      <section class="page-hero ai-hero">
+        <div>
+          <p class="eyebrow" data-i18n="aiEyebrow">AI Brief</p>
+          <h1 data-i18n="aiTitle">Fikriniz net değilse, buradan başlayın.</h1>
+          <p data-i18n="aiLead">Fikrinizi yazın. AI öneriler, eklemeler ve kritik sorular üretir; fikir olgunlaşınca iletişim bilgilerinizi alıp mühendise gönderilecek özeti hazırlar.</p>
+        </div>
+      </section>
+
+      <section class="section ai-workspace">
+        <div class="ai-chat-panel reveal">
+          <div class="step-track" id="stepTrack" aria-label="Progress">
+            <div class="step active" data-step="1"><span class="step-num">1</span><span data-i18n="stepIdea">Fikir</span></div>
+            <div class="step" data-step="2"><span class="step-num">2</span><span data-i18n="stepRefine">Geliştir</span></div>
+            <div class="step" data-step="3"><span class="step-num">3</span><span data-i18n="stepContact">İletişim</span></div>
+            <div class="step" data-step="4"><span class="step-num">4</span><span data-i18n="stepSend">Gönder</span></div>
+          </div>
+
+          <div class="chat-topline">
+            <span data-i18n="chatStatus">AI fikir asistanı hazır</span>
+            <strong>AI</strong>
+          </div>
+
+          <div class="chat-window" id="aiChatLog" aria-live="polite">
+            <article class="chat-message ai">
+              <span>AI</span>
+              <p data-i18n="chatWelcome">Fikrinizi serbestçe yazın. Eksik olan yerleri yakalayıp size daha güçlü, uygulanabilir bir proje fikri önereceğim.</p>
+            </article>
+          </div>
+
+          <form class="idea-composer" id="ideaForm">
+            <label>
+              <span data-i18n="ideaLabel">İlk fikriniz</span>
+              <textarea id="ideaInput" name="idea" rows="5" required data-i18n-placeholder="ideaPlaceholder" placeholder="Örn: İstanbul'da modern ama sıcak bir villa istiyorum, bahçesi olsun, bütçeyi çok aşmak istemiyorum."></textarea>
+            </label>
+            <button class="button primary" type="submit" data-i18n="ideaButton">AI önerilerini al</button>
+          </form>
+
+          <form class="refine-panel hidden" id="refineForm">
+            <div class="panel-title">
+              <p class="eyebrow" data-i18n="refineEyebrow">AI soruları</p>
+              <h2 data-i18n="refineTitle">Fikri tamamlamak için kısa cevaplar</h2>
+            </div>
+            <div class="form-grid">
+              <label>
+                <span data-i18n="fieldType">Proje türü</span>
+                <select name="type">
+                  <option value="Villa" data-i18n="typeVilla">Villa</option>
+                  <option value="Apartment renovation" data-i18n="typeRenovation">Daire tadilatı</option>
+                  <option value="Commercial space" data-i18n="typeCommercial">Ticari alan</option>
+                  <option value="Land development" data-i18n="typeLand">Arsa geliştirme</option>
+                </select>
+              </label>
+              <label>
+                <span data-i18n="fieldLocation">Şehir / ilçe</span>
+                <input name="location" type="text" required />
+              </label>
+              <label>
+                <span data-i18n="fieldBudget">Bütçe aralığı</span>
+                <select name="budget">
+                  <option value="Not clear yet" data-i18n="budgetExploratory">Henüz net değil</option>
+                  <option value="25k-75k EUR">25k-75k EUR</option>
+                  <option value="75k-200k EUR">75k-200k EUR</option>
+                  <option value="200k+ EUR">200k+ EUR</option>
+                </select>
+              </label>
+              <label>
+                <span data-i18n="fieldTimeline">Başlama hedefi</span>
+                <select name="timeline">
+                  <option value="Immediately" data-i18n="timeNow">Hemen</option>
+                  <option value="1-3 months" data-i18n="timeSoon">1-3 ay</option>
+                  <option value="3-6 months" data-i18n="timeLater">3-6 ay</option>
+                  <option value="Research phase" data-i18n="timeResearch">Araştırma aşaması</option>
+                </select>
+              </label>
+            </div>
+            <label class="wide">
+              <span data-i18n="fieldStyle">Stil</span>
+              <select name="style">
+                <option value="Warm modern" data-i18n="styleWarm">Sıcak modern</option>
+                <option value="Minimal luxury" data-i18n="styleMinimal">Minimal lüks</option>
+                <option value="Natural Mediterranean" data-i18n="styleMediterranean">Doğal Akdeniz</option>
+                <option value="Not sure" data-i18n="styleUnsure">Emin değilim</option>
+              </select>
+            </label>
+            <label class="wide">
+              <span data-i18n="fieldPriorities">En önemli öncelikler</span>
+              <input name="priorities" type="text" data-i18n-placeholder="priorityPlaceholder" placeholder="Bütçe, hız, lüks malzeme, kira getirisi..." />
+            </label>
+            <button class="button secondary" type="submit" data-i18n="refineButton">Fikri geliştir</button>
+          </form>
+        </div>
+
+        <aside class="brief-result reveal reveal-delay-1" aria-live="polite">
+          <p class="eyebrow" data-i18n="resultEyebrow">Mühendis notu</p>
+          <h2 data-i18n="resultTitle">Proje pasaportu</h2>
+          <pre id="briefOutput" data-i18n="resultEmpty">AI önerilerinden sonra burada gönderime hazır teknik özet oluşacak.</pre>
+
+          <form class="contact-gate hidden" id="briefContactForm">
+            <p data-i18n="contactGateText">Göndermeden önce mühendis ekibinin size dönebilmesi için iletişim bilgilerinizi ekleyin.</p>
+            <label><span data-i18n="fieldName">Ad Soyad</span><input name="name" type="text" required autocomplete="name" /></label>
+            <label><span data-i18n="fieldEmail">E-posta</span><input name="email" type="email" required autocomplete="email" /></label>
+            <label><span data-i18n="fieldPhone">Telefon</span><input name="phone" type="tel" required autocomplete="tel" /></label>
+            <button class="button primary" type="submit" data-i18n="contactGateButton">İletişimi ekle</button>
+          </form>
+
+          <div class="send-section hidden" id="sendSection">
+            <p class="send-note" data-i18n="sendNote">Özet hazır. Aşağıdaki butona basarak mühendise gönderebilirsiniz.</p>
+            <button class="button primary disabled" id="emailBrief" type="button" disabled data-i18n="resultEmail">Özeti gönder</button>
+            <div class="send-success hidden" id="sendSuccess" data-i18n="sendSuccess">Özet mühendise gönderildi!</div>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span>© 2026 Anka Build Studio</span><a href="contact.html" data-i18n="footerContact">Teklif iste</a></footer>
+    <script src="app.js"></script>
+  </body>
+</html>

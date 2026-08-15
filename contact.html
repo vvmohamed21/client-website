@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact | Anka Build Studio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="contact">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Anka Build Studio home">
+        <span class="brand-mark">A</span>
+        <span><strong>Anka Build Studio</strong><small data-i18n="brandLine">Mimarlık ve inşaat danışmanlığı</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html" data-i18n="navHome">Ana sayfa</a>
+        <a href="services.html" data-i18n="navServices">Hizmetler</a>
+        <a href="portfolio.html" data-i18n="navPortfolio">Projeler</a>
+        <a href="sigorta.html" data-i18n="navInsurance">Sigorta</a>
+        <a href="ai-brief.html" data-i18n="navAi">AI Brief</a>
+        <a href="contact.html" data-i18n="navContact">İletişim</a>
+      </nav>
+      <div class="language-switch" role="group" aria-label="Language"><button type="button" data-lang="tr" class="active">TR</button><button type="button" data-lang="en">EN</button></div>
+    </header>
+
+    <main>
+      <section class="page-hero contact-hero">
+        <div>
+          <p class="eyebrow" data-i18n="contactEyebrow">İletişim</p>
+          <h1 data-i18n="contactTitle">Bir sonraki kararı birlikte netleştirelim.</h1>
+          <p data-i18n="contactLead">Yeni proje, tadilat, yatırım analizi veya teknik kontrol için ekibimize ulaşın.</p>
+        </div>
+      </section>
+
+      <section class="section contact-layout">
+        <div class="contact-panel">
+          <h2 data-i18n="contactInfoTitle">Studio bilgileri</h2>
+          <p><strong>Email</strong><br /><a href="mailto:engineer@ankabuild.studio">engineer@ankabuild.studio</a></p>
+          <p><strong>WhatsApp</strong><br /><a href="https://wa.me/905551112233">+90 555 111 22 33</a></p>
+          <p><strong data-i18n="contactAddressLabel">Adres</strong><br />İstanbul, Türkiye</p>
+          <div class="contact-tags">
+            <span data-i18n="tagPermit">Ruhsat</span>
+            <span data-i18n="tagDesign">Tasarım</span>
+            <span data-i18n="tagBuild">Uygulama</span>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <label><span data-i18n="fieldName">Ad Soyad</span><input name="name" type="text" required /></label>
+          <label><span data-i18n="fieldEmail">E-posta</span><input name="email" type="email" required /></label>
+          <label><span data-i18n="contactSubject">Konu</span><input name="subject" type="text" required /></label>
+          <label><span data-i18n="contactMessage">Mesaj</span><textarea name="message" rows="5" required></textarea></label>
+          <button class="button primary" type="submit" data-i18n="contactSend">E-posta hazırla</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span>© 2026 Anka Build Studio</span><a href="ai-brief.html" data-i18n="footerAi">AI Brief baslat</a></footer>
+    <script src="app.js"></script>
+  </body>
+</html>

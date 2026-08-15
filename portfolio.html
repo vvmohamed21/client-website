@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio | Anka Build Studio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="portfolio">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Anka Build Studio home">
+        <span class="brand-mark">A</span>
+        <span><strong>Anka Build Studio</strong><small data-i18n="brandLine">Mimarlık ve inşaat danışmanlığı</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html" data-i18n="navHome">Ana sayfa</a>
+        <a href="services.html" data-i18n="navServices">Hizmetler</a>
+        <a href="portfolio.html" data-i18n="navPortfolio">Projeler</a>
+        <a href="sigorta.html" data-i18n="navInsurance">Sigorta</a>
+        <a href="ai-brief.html" data-i18n="navAi">AI Brief</a>
+        <a href="contact.html" data-i18n="navContact">İletişim</a>
+      </nav>
+      <div class="language-switch" role="group" aria-label="Language"><button type="button" data-lang="tr" class="active">TR</button><button type="button" data-lang="en">EN</button></div>
+    </header>
+
+    <main>
+      <section class="page-hero portfolio-hero">
+        <div>
+          <p class="eyebrow" data-i18n="portfolioEyebrow">Projeler</p>
+          <h1 data-i18n="portfolioTitle">Net kapsam, güçlü malzeme ve temiz teslim.</h1>
+          <p data-i18n="portfolioLead">Seçili konseptler; villa, butik ticari alan ve yenileme projeleri için uygulanabilir bir kalite standardı gösterir.</p>
+        </div>
+      </section>
+
+      <section class="section project-grid">
+        <article class="project-card">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Modern villa exterior" />
+          <div>
+            <span data-i18n="project1Type">Villa</span>
+            <h2 data-i18n="project1Title">Ege Light House</h2>
+            <p data-i18n="project1Text">Doğal taş, açık mutfak, gölgeli teras ve deniz rüzgarına göre planlanan cephe.</p>
+          </div>
+        </article>
+        <article class="project-card">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" alt="Elegant living room renovation" />
+          <div>
+            <span data-i18n="project2Type">Tadilat</span>
+            <h2 data-i18n="project2Title">Urban Renewal Flat</h2>
+            <p data-i18n="project2Text">Kısa süreli uygulama, akustik iyileştirme ve saklı depolama çözümleri.</p>
+          </div>
+        </article>
+        <article class="project-card">
+          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80" alt="Contemporary office interior" />
+          <div>
+            <span data-i18n="project3Type">Ticari</span>
+            <h2 data-i18n="project3Title">North Clinic Studio</h2>
+            <p data-i18n="project3Text">Hasta akışı, hijyenik yüzeyler ve premium marka algısı birlikte kurgulandı.</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="section compare-section">
+        <div class="compare-copy reveal">
+          <p class="eyebrow" data-i18n="compareEyebrow">Önce / Sonra</p>
+          <h2 data-i18n="compareTitle">Tadilat kararını müşteriye hissettirin.</h2>
+          <p data-i18n="compareLead">Sürgüyü hareket ettirerek eski mekan ile önerilen yeni atmosfer arasındaki farkı görün.</p>
+        </div>
+
+        <div class="compare-slider reveal reveal-delay-1" style="--pos: 52%">
+          <div class="compare-image before">
+            <img src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&w=1400&q=80" alt="Existing apartment before renovation" />
+            <span data-i18n="compareBefore">Önce</span>
+          </div>
+          <div class="compare-image after">
+            <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=1400&q=80" alt="Renovated apartment after design" />
+            <span data-i18n="compareAfter">Sonra</span>
+          </div>
+          <div class="compare-handle" aria-hidden="true"></div>
+          <input type="range" min="8" max="92" value="52" aria-label="Before after comparison" />
+        </div>
+      </section>
+
+      <section class="section portfolio-proof">
+        <article class="reveal"><strong>18</strong><span data-i18n="portfolioStats1">Konsept kararları</span></article>
+        <article class="reveal reveal-delay-1"><strong>6</strong><span data-i18n="portfolioStats2">Malzeme senaryosu</span></article>
+        <article class="reveal reveal-delay-2"><strong>42</strong><span data-i18n="portfolioStats3">Saha etkisi</span></article>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span>© 2026 Anka Build Studio</span><a href="contact.html" data-i18n="footerContact">Teklif iste</a></footer>
+    <script src="app.js"></script>
+  </body>
+</html>
