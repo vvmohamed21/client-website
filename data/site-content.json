@@ -1,0 +1,58 @@
+{
+  "texts": {},
+  "images": {
+    "index": {
+      "heroBackground": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=82",
+      "experienceBackground": "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1800&q=80"
+    },
+    "services": {
+      "heroBackground": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1800&q=80"
+    },
+    "portfolio": {
+      "heroBackground": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1800&q=80",
+      "compareBefore": "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&w=1400&q=80",
+      "compareAfter": "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=1400&q=80"
+    },
+    "contact": {
+      "heroBackground": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80"
+    },
+    "ai-brief": {
+      "heroBackground": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=82"
+    },
+    "sigorta": {
+      "heroBackground": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1800&q=80"
+    }
+  },
+  "projects": [
+    {
+      "id": 1,
+      "order": 1,
+      "type": "Villa",
+      "title": "Ege Light House",
+      "description": "Doğal taş, açık mutfak, gölgeli teras ve deniz rüzgarına göre planlanan cephe.",
+      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+      "beforeImage": "",
+      "afterImage": ""
+    },
+    {
+      "id": 2,
+      "order": 2,
+      "type": "Tadilat",
+      "title": "Urban Renewal Flat",
+      "description": "Kısa süreli uygulama, akustik iyileştirme ve saklı depolama çözümleri.",
+      "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
+      "beforeImage": "",
+      "afterImage": ""
+    },
+    {
+      "id": 3,
+      "order": 3,
+      "type": "Ticari",
+      "title": "North Clinic Studio",
+      "description": "Hasta akışı, hijyenik yüzeyler ve premium marka algısı birlikte kurgulandı.",
+      "image": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
+      "beforeImage": "",
+      "afterImage": ""
+    }
+  ]
+}

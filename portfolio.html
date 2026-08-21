@@ -3,14 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portfolio | Anka Build Studio</title>
+    <meta name="theme-color" content="#0B1E36" />
+    <title>Portfolio | AVETO</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   </head>
   <body data-page="portfolio">
     <header class="site-header">
-      <a class="brand" href="index.html" aria-label="Anka Build Studio home">
-        <span class="brand-mark">A</span>
-        <span><strong>Anka Build Studio</strong><small data-i18n="brandLine">Mimarlık ve inşaat danışmanlığı</small></span>
+      <a class="brand" href="index.html" aria-label="AVETO home">
+        <img src="imgn09.jpeg" alt="AVETO logo" class="logo-img">
       </a>
       <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
       <nav class="nav-links" aria-label="Main navigation">
@@ -33,31 +37,8 @@
         </div>
       </section>
 
-      <section class="section project-grid">
-        <article class="project-card">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Modern villa exterior" />
-          <div>
-            <span data-i18n="project1Type">Villa</span>
-            <h2 data-i18n="project1Title">Ege Light House</h2>
-            <p data-i18n="project1Text">Doğal taş, açık mutfak, gölgeli teras ve deniz rüzgarına göre planlanan cephe.</p>
-          </div>
-        </article>
-        <article class="project-card">
-          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" alt="Elegant living room renovation" />
-          <div>
-            <span data-i18n="project2Type">Tadilat</span>
-            <h2 data-i18n="project2Title">Urban Renewal Flat</h2>
-            <p data-i18n="project2Text">Kısa süreli uygulama, akustik iyileştirme ve saklı depolama çözümleri.</p>
-          </div>
-        </article>
-        <article class="project-card">
-          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80" alt="Contemporary office interior" />
-          <div>
-            <span data-i18n="project3Type">Ticari</span>
-            <h2 data-i18n="project3Title">North Clinic Studio</h2>
-            <p data-i18n="project3Text">Hasta akışı, hijyenik yüzeyler ve premium marka algısı birlikte kurgulandı.</p>
-          </div>
-        </article>
+      <section class="section">
+        <div id="projectGrid" class="project-grid"></div>
       </section>
 
       <section class="section compare-section">
@@ -88,7 +69,8 @@
       </section>
     </main>
 
-    <footer class="site-footer"><span>© 2026 Anka Build Studio</span><a href="contact.html" data-i18n="footerContact">Teklif iste</a></footer>
+    <footer class="site-footer"><span>© 2026 AVETO</span><a href="contact.html" data-i18n="footerContact">Teklif iste</a></footer>
+    <script src="content.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0B1E36" />
+    <title>Yönetim Paneli | AVETO</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <style>
+      .admin-container { max-width: 1400px; margin: 0 auto; padding: 40px 20px; }
+      .admin-header {
+        text-align: center; margin-bottom: 32px; padding: 28px;
+        background: #f8f9fa; border-radius: 8px; border: 1px solid #e0e0e0;
+      }
+      .admin-header h1 { color: #0B1E36; margin-bottom: 8px; }
+      .admin-section {
+        background: #fff; border: 1px solid #e0e0e0;
+        border-radius: 8px; padding: 24px; margin-bottom: 24px;
+      }
+      .admin-section h2 {
+        color: #0B1E36; margin-bottom: 18px;
+        border-bottom: 2px solid #0B1E36; padding-bottom: 8px;
+      }
+      .content-item {
+        margin-bottom: 16px; padding: 14px;
+        background: #f8f9fa; border-radius: 6px; border: 1px solid #e0e0e0;
+      }
+      .content-item label { display: block; font-weight: 600; color: #0B1E36; margin-bottom: 6px; }
+      .content-item label small { font-weight: 400; color: #888; }
+      .content-item textarea,
+      .content-item input[type="text"],
+      .content-item input[type="url"],
+      .content-item input[type="password"],
+      .content-item input[type="number"] {
+        width: 100%; padding: 10px; border: 1px solid #e0e0e0;
+        border-radius: 4px; font-size: 16px; box-sizing: border-box;
+      }
+      .content-item textarea { min-height: 72px; resize: vertical; }
+      .btn {
+        padding: 10px 18px; border: none; border-radius: 4px;
+        cursor: pointer; font-weight: 600; margin-right: 8px; margin-top: 4px;
+      }
+      .btn-primary { background: #0B1E36; color: #fff; }
+      .btn-primary:hover { background: #081729; }
+      .btn-secondary { background: #e0e0e0; color: #0B1E36; }
+      .btn-success { background: #4caf50; color: #fff; }
+      .btn-danger { background: #f44336; color: #fff; }
+      .btn-warning { background: #ff9800; color: #fff; }
+      .project-item {
+        display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+        margin-bottom: 16px; padding: 18px; background: #f8f9fa;
+        border-radius: 6px; border: 1px solid #e0e0e0;
+      }
+      .project-item.selected { border-color: #0B1E36; box-shadow: 0 0 0 2px rgba(11,30,54,0.15); }
+      .editor-group-title {
+        font-weight: 700; color: #0B1E36; margin: 0 0 10px;
+        padding-bottom: 6px; border-bottom: 1px solid #e0e0e0;
+        text-transform: uppercase; font-size: 12px; letter-spacing: 0.06em;
+      }
+      .project-controls { display: flex; gap: 8px; margin-top: 10px; }
+      .image-preview {
+        max-width: 100%; height: 140px; object-fit: cover;
+        border-radius: 4px; margin-top: 8px; border: 1px solid #e0e0e0;
+      }
+      .success-message {
+        background: #d4edda; color: #155724; padding: 14px;
+        border-radius: 4px; margin-bottom: 16px; border: 1px solid #c3e6cb; display: none;
+      }
+      .tab-buttons { display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; }
+      .tab-btn {
+        padding: 10px 18px; background: #e0e0e0; border: none;
+        border-radius: 4px; cursor: pointer; font-weight: 600; color: #0B1E36;
+      }
+      .tab-btn.active { background: #0B1E36; color: #fff; }
+      .tab-content { display: none; }
+      .tab-content.active { display: block; }
+      .page-selector {
+        margin-bottom: 16px; padding: 14px;
+        background: #f8f9fa; border-radius: 6px; border: 1px solid #e0e0e0;
+      }
+      .page-selector select {
+        width: 100%; padding: 10px; border: 1px solid #e0e0e0;
+        border-radius: 4px; font-size: 16px;
+      }
+      .project-order-controls {
+        display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+        margin-bottom: 16px; padding: 14px;
+        background: #f8f9fa; border-radius: 6px; border: 1px solid #e0e0e0;
+      }
+      .project-order-controls label { font-weight: 600; color: #0B1E36; }
+      .logout-btn {
+        position: fixed; top: 16px; right: 16px; background: #f44336;
+        color: #fff; padding: 10px 18px; border: none; border-radius: 4px;
+        cursor: pointer; font-weight: 600; z-index: 1000;
+      }
+      .credentials-section {
+        background: #fff3cd; border: 1px solid #ffeeba;
+        padding: 18px; border-radius: 6px;
+      }
+      .credentials-section h3 { color: #856404; margin-bottom: 10px; }
+      .credentials-section p { color: #856404; margin-bottom: 12px; font-size: 0.95rem; }
+      @media (max-width: 768px) {
+        .project-item { grid-template-columns: 1fr; }
+        .logout-btn { position: static; display: block; margin: 16px auto 0; }
+        .admin-container { padding-top: 20px; }
+      }
+    </style>
+  </head>
+  <body>
+    <button class="logout-btn" type="button" onclick="logout()">Çıkış</button>
+
+    <main class="admin-container">
+      <div class="admin-header">
+        <h1>Yönetim Paneli</h1>
+        <p>Site metinlerini, görsellerini ve projeleri düzenleyin</p>
+      </div>
+
+      <div class="success-message" id="successMessage">Değişiklikler kaydedildi!</div>
+
+      <div class="tab-buttons">
+        <button class="tab-btn active" type="button" data-tab="texts">Metinler</button>
+        <button class="tab-btn" type="button" data-tab="images">Görseller</button>
+        <button class="tab-btn" type="button" data-tab="projects">Projeler</button>
+        <button class="tab-btn" type="button" data-tab="settings">Ayarlar</button>
+      </div>
+
+      <div class="tab-content active" id="texts">
+        <div class="admin-section">
+          <h2>Sayfa metinleri</h2>
+          <div class="page-selector">
+            <label for="pageSelector">Sayfa seçin:</label>
+            <select id="pageSelector" onchange="loadPageTexts()">
+              <option value="index">Ana Sayfa</option>
+              <option value="services">Hizmetler</option>
+              <option value="portfolio">Projeler</option>
+              <option value="contact">İletişim</option>
+              <option value="ai-brief">AI Brief</option>
+              <option value="sigorta">Sigorta</option>
+            </select>
+          </div>
+          <div id="textEditor"></div>
+          <button class="btn btn-primary" type="button" onclick="saveTextChanges()">Metinleri kaydet</button>
+        </div>
+      </div>
+
+      <div class="tab-content" id="images">
+        <div class="admin-section">
+          <h2>Sayfa görselleri</h2>
+          <div class="page-selector">
+            <label for="imagePageSelector">Sayfa seçin:</label>
+            <select id="imagePageSelector" onchange="loadPageImages()">
+              <option value="index">Ana Sayfa</option>
+              <option value="services">Hizmetler</option>
+              <option value="portfolio">Projeler</option>
+              <option value="contact">İletişim</option>
+              <option value="ai-brief">AI Brief</option>
+              <option value="sigorta">Sigorta</option>
+            </select>
+          </div>
+          <div id="imageEditor"></div>
+          <button class="btn btn-primary" type="button" onclick="saveImageChanges()">Görselleri kaydet</button>
+        </div>
+      </div>
+
+      <div class="tab-content" id="projects">
+        <div class="admin-section">
+          <h2>Proje yönetimi</h2>
+          <p style="margin-bottom:12px;color:#666;">Projeler sıra numarasına göre sayfada gösterilir. Sırayı değiştirmek için numara girin veya yukarı/aşağı taşıyın.</p>
+          <div class="project-order-controls">
+            <label>Sıralama:</label>
+            <button class="btn btn-secondary" type="button" onclick="moveProjectUp()">↑ Yukarı</button>
+            <button class="btn btn-secondary" type="button" onclick="moveProjectDown()">↓ Aşağı</button>
+          </div>
+          <div id="projectsEditor"></div>
+          <button class="btn btn-success" type="button" onclick="addNewProject()">+ Yeni proje ekle</button>
+          <button class="btn btn-primary" type="button" onclick="saveProjectChanges()">Projeleri kaydet</button>
+        </div>
+      </div>
+
+      <div class="tab-content" id="settings">
+        <div class="admin-section">
+          <h2>Giriş ayarları</h2>
+          <div class="credentials-section">
+            <h3>Kullanıcı adı ve şifre değiştir</h3>
+            <p>Yönetim paneline giriş bilgilerinizi güncelleyin.</p>
+            <div class="content-item">
+              <label>Mevcut kullanıcı adı:</label>
+              <input type="text" id="currentUsername" readonly>
+            </div>
+            <div class="content-item">
+              <label>Mevcut şifre:</label>
+              <input type="password" id="currentPassword" autocomplete="current-password">
+            </div>
+            <div class="content-item">
+              <label>Yeni kullanıcı adı:</label>
+              <input type="text" id="newUsername" autocomplete="username">
+            </div>
+            <div class="content-item">
+              <label>Yeni şifre:</label>
+              <input type="password" id="newPassword" autocomplete="new-password">
+            </div>
+            <div class="content-item">
+              <label>Yeni şifre (tekrar):</label>
+              <input type="password" id="confirmPassword" autocomplete="new-password">
+            </div>
+            <button class="btn btn-warning" type="button" onclick="updateCredentials()">Giriş bilgilerini güncelle</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="admin.js"></script>
+  </body>
+</html>

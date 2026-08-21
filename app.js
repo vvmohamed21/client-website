@@ -53,15 +53,6 @@ const translations = {
     portfolioEyebrow: "Projeler",
     portfolioTitle: "Net kapsam, güçlü malzeme ve temiz teslim.",
     portfolioLead: "Seçili konseptler; villa, butik ticari alan ve yenileme projeleri için uygulanabilir bir kalite standardı gösterir.",
-    project1Type: "Villa",
-    project1Title: "Ege Light House",
-    project1Text: "Doğal taş, açık mutfak, gölgeli teras ve deniz rüzgarına göre planlanan cephe.",
-    project2Type: "Tadilat",
-    project2Title: "Urban Renewal Flat",
-    project2Text: "Kısa süreli uygulama, akustik iyileştirme ve saklı depolama çözümleri.",
-    project3Type: "Ticari",
-    project3Title: "North Clinic Studio",
-    project3Text: "Hasta akışı, hijyenik yüzeyler ve premium marka algısı birlikte kurgulandı.",
     aiEyebrow: "AI Brief",
     aiTitle: "Fikriniz net değilse, buradan başlayın.",
     aiLead: "Fikrinizi yazın. AI öneriler, eklemeler ve kritik sorular üretir; fikir olgunlaşınca iletişim bilgilerinizi alıp mühendise gönderilecek özeti hazırlar.",
@@ -222,15 +213,6 @@ const translations = {
     portfolioEyebrow: "Projects",
     portfolioTitle: "Clear scope, strong materials and clean handover.",
     portfolioLead: "Selected concepts show a practical quality standard for villas, boutique commercial spaces and renovations.",
-    project1Type: "Villa",
-    project1Title: "Aegean Light House",
-    project1Text: "Natural stone, open kitchen, shaded terrace and a facade planned around sea breeze.",
-    project2Type: "Renovation",
-    project2Title: "Urban Renewal Flat",
-    project2Text: "Short execution window, acoustic upgrades and hidden storage solutions.",
-    project3Type: "Commercial",
-    project3Title: "North Clinic Studio",
-    project3Text: "Patient flow, hygienic surfaces and premium brand perception designed together.",
     aiEyebrow: "AI Brief",
     aiTitle: "If your idea is not clear yet, start here.",
     aiLead: "Write your raw idea. AI will suggest improvements, additions and critical questions; when the idea is mature, it asks for contact details and prepares the engineer summary.",
@@ -342,6 +324,8 @@ const translations = {
     portfolioStats3: "Site impact"
   }
 };
+
+window.translations = translations;
 
 function currentLang() {
   return localStorage.getItem("siteLang") || "tr";
@@ -918,3 +902,4 @@ setupScrollReveal();
 setupBriefForm();
 setupContactForm();
 setupBeforeAfterSliders();
+window.initSiteContent?.();

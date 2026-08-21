@@ -3,14 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Contact | Anka Build Studio</title>
+    <meta name="theme-color" content="#0B1E36" />
+    <title>Contact | AVETO</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   </head>
   <body data-page="contact">
     <header class="site-header">
-      <a class="brand" href="index.html" aria-label="Anka Build Studio home">
-        <span class="brand-mark">A</span>
-        <span><strong>Anka Build Studio</strong><small data-i18n="brandLine">Mimarlık ve inşaat danışmanlığı</small></span>
+      <a class="brand" href="index.html" aria-label="AVETO home">
+        <img src="imgn09.jpeg" alt="AVETO logo" class="logo-img">
       </a>
       <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
       <nav class="nav-links" aria-label="Main navigation">
@@ -36,9 +40,9 @@
       <section class="section contact-layout">
         <div class="contact-panel">
           <h2 data-i18n="contactInfoTitle">Studio bilgileri</h2>
-          <p><strong>Email</strong><br /><a href="mailto:engineer@ankabuild.studio">engineer@ankabuild.studio</a></p>
-          <p><strong>WhatsApp</strong><br /><a href="https://wa.me/905551112233">+90 555 111 22 33</a></p>
-          <p><strong data-i18n="contactAddressLabel">Adres</strong><br />İstanbul, Türkiye</p>
+          <p><strong>Email</strong><br /><a href="mailto:engineer@ankabuild.studio" data-contact="email" data-i18n="contactEmail">engineer@ankabuild.studio</a></p>
+          <p><strong>WhatsApp</strong><br /><a href="https://wa.me/905551112233" data-contact="phone" data-i18n="contactPhone">+90 555 111 22 33</a></p>
+          <p><strong data-i18n="contactAddressLabel">Adres</strong><br /><span data-contact="address" data-i18n="contactAddress">İstanbul, Türkiye</span></p>
           <div class="contact-tags">
             <span data-i18n="tagPermit">Ruhsat</span>
             <span data-i18n="tagDesign">Tasarım</span>
@@ -56,7 +60,8 @@
       </section>
     </main>
 
-    <footer class="site-footer"><span>© 2026 Anka Build Studio</span><a href="ai-brief.html" data-i18n="footerAi">AI Brief baslat</a></footer>
+    <footer class="site-footer"><span>© 2026 AVETO</span><a href="ai-brief.html" data-i18n="footerAi">AI Brief baslat</a></footer>
+    <script src="content.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
